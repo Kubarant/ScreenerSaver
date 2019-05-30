@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+          href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet"
+          href="https://code.getmdl.io/1.3.0/material.deep_purple-indigo.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/sort.js"></script>
+
+    <script src="js/clipboard.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <script src="js/dropfile.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <title>Obraski Image Hosting</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row --accent-color">
+            <img src="logo.png">
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect --white" onclick="window.location.href='/register'">
+                   Register
+                </button>
+
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect --white" onclick="window.location.href='/login'">
+                    Sign in
+                </button>
+
+            </nav>
+        </div>
+    </header>
+
+    <main class="mdl-layout__content">
+        <div class="page-content">
+
+
+            <div class="description">
+                <h1>Upload your images </h1>
+            <h4 >
+                Sign in and get free space for your images that you can easily share with your friends, manage and archive
+                or upload image as guest. Guest images are deleted one month after upload. Max file size is 2MB.
+            </h4>
+            </div>
+
+
+
+
+            <div id="drop-zone" ondrop="drop_handler(event);"
+                 ondragover="dragover_handler(event);"
+                 ondragend="dragend_handler(event);" class="drop_show">
+
+                <i class="material-icons" id="cloud-icon">cloud_upload</i>
+                <div id="sending-progress"
+                     class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+                <span>Drag file here or
+					<button onclick="fileExplore()" class="mdl-button mdl-js-button mdl-button--raised" id="browse">Choose</button>
+				</span>
+                <input type="file" id="hidden-file" onchange="addFile(this.value); this.value=null; return false;">
+
+            </div>
+
+            <div id="success-info" class="mdl-js-snackbar mdl-snackbar">
+                <div class="mdl-snackbar__text"></div>
+                <button class="mdl-snackbar__action" type="button"></button>
+            </div>
+
+
+
+
+            <dialog class="mdl-dialog" id="terms-dialog">
+                <h4 class="mdl-dialog__title">Rules</h4>
+                <div class="mdl-dialog__content">
+                    <p>
+                        Don't be evil
+                    </p>
+                </div>
+                <div class="mdl-dialog__actions">
+                    <button type="button" class="mdl-button"  onclick="document.getElementById('terms-dialog').close()">Agree</button>
+                    <button type="button" class="mdl-button close"  onclick="window.location.replace('https://google.com/search?q=other+image+hosting ')">Disagree</button>
+                </div>
+            </dialog>
+
+            <div class="description">
+               <h4> By uploading you agree with <a onclick="document.getElementById('terms-dialog').showModal()">Terms of Use</a>
+                  </h4>
+            </div>
+
+
+            </div>
+
+    </main>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+@charset "UTF-8";
+.siema {
+    display: flex;
+    margin: 20px 12%;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: row;
+}
+
+.siema>img {
+    max-width: 50vw;
+    max-height: 30vh;
+    margin: 30px 10px;
+}
+
+h4::first-letter {
+    text-transform: uppercase;
+}
+
+#username {
+    margin-left: 15px;
+}
+
+#person-icon {
+    margin: 0 0 0 30px;
+}
+
+
+/*                         ----------- Drop zone -------------                             */
+
+#drop-zone {
+    height: 35vh;
+    width: 90vw;
+    background: linear-gradient(to bottom right, #ffffff 0%, #dddddd 100%);
+    border: dotted 3px;
+    border-radius: 15px;
+    margin: 10px 60px;
+    padding: 10px;
+    text-align: center;
+    border-color: rgb(230, 230, 230);
+    display: grid;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: "Roboto";
+    animation-name: drop_show;
+    animation-duration: 0.8s;
+    display: none;
+}
+
+@keyframes drop_show {
+    from {
+        font-size: 0.3em;
+        width: 80vw;
+        height: 18vh;
+    }
+    to {
+        font-size: 2em;
+        width: 90vw;
+        height: 35vh;
+    }
+}
+
+#chmura {
+    font-size: 212px;
+    animation-name: drop_show_icon;
+    animation-duration: 0.5s;
+}
+
+@keyframes drop_show_icon {
+    from {
+        font-size: 64px;
+    }
+    to {
+        font-size: 212px;
+    }
+}
+
+#sending-prog {
+    align-self: center;
+    justify-self: center;
+    margin: 15px 0;
+    padding: 2px 2px;
+    font-size: 0.5em;
+    display: none;
+}
+
+#browse {
+    font-weight: 600;
+    font-size: 0.8em;
+    text-transform: none;
+    margin-left: 10px;
+    background-color: inherit;
+}
+
+#hidden-file {
+    display: none;
+}
+
+#show_drop {
+    background-color: inherit;
+    box-shadow: none;
+}
+
+.elo {
+    cursor: pointer;
+    max-width: 50vw;
+    max-height: 30vh;
+}
+
+.img-options {
+    position: absolute;
+    display: block;
+    bottom: 10%;
+    max-width: 75%;
+    word-wrap: break-word;
+    left: 5%;
+    font-size: calc(13px + 0.4vw);
+    font-weight: 700;
+    font-style: italic;
+    color: #fafafa;
+    text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto';
+    opacity: 0;
+    letter-spacing: 1px;
+}
+
+.img-container:hover .img-options {
+    opacity: 1;
+    -webkit-transition: opacity .25s ease-in-out .0s;
+    transition: opacity .25s ease-in-out .0s;
+}
+
+.image-buttons {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    bottom: calc(2% + 10px);
+    right: calc(3% + 10px);
+}
+
+.img-container:hover .image-buttons {
+    opacity: 1;
+}
+.image-button{
+	background-color: rgba(160,160,160,0.50);
+	min-width:42px;
+	min-height:42px;
+	margin:4px 2px;
+	max-width:43px;
+	max-height:43px;
+}
+
+.img-container {
+    margin: 30px 10px;
+    max-width: 50vw;
+    max-height: 30vh;
+    position: relative;
+	box-shadow: 14px 14px 68px -29px rgba(0,0,0,0.62);
+}
+
+.img-container:hover {
+    filter: saturate(25%);
+    filter: hue-rotate(120deg);
+}
+
+.image-hiding {
+    animation-name: hide;
+    animation-duration: 1.0s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+        order: initial;
+    }
+    30% {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 0;
+        order: 1;
+    }
+}

@@ -1,0 +1,59 @@
+html {
+    min-width: 100%;
+    min-height: 100%;
+    background: linear-gradient(to bottom right, #ffffff 0%, #eeeeee 100%);
+}
+.--accent-color{
+    background-color: #6e47b2;
+}
+.--white{
+color:white;
+}
+
+#drop-zone {
+    height: 35vh;
+    width: 90vw;
+    margin: 0px;
+    padding: 10px 5vw;
+    text-align: center;
+    border-color: rgb(230, 230, 230);
+    display: grid;
+    font-size: 2em;
+    border-top: dashed 1px #6e47b2;
+    border-bottom: dashed 1px #6e47b2;
+
+    font-weight: bold;
+    font-family: "Arial";
+}
+.description{
+    margin: 50px 14% 0 14%;
+    text-align:center;
+}
+.description > h4 > a{
+cursor:pointer;
+}
+
+#cloud-icon {
+    font-size: 212px;
+}
+
+#sending-progress {
+    align-self: center;
+    justify-self: center;
+    margin: 15px 0;
+    padding: 2px 2px;
+    font-size: 0.5em;
+    display: none;
+}
+
+#browse {
+    font-weight: 600;
+    font-size: 0.8em;
+    text-transform: none;
+    margin-left: 10px;
+    background-color: inherit;
+}
+
+#hidden-file {
+    display: none;
+}
