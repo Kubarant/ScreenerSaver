@@ -2,7 +2,7 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Obraski Account Activation</title>
     <style type="text/css">
         html,body{
             background-color:#6e47b2;
@@ -12,7 +12,7 @@
             height:100%;
         }
         .card{
-        border-radius:5%;
+            border-radius:5%;
             background-color:white;
             width:70%;
             padding:5%;
@@ -24,13 +24,13 @@
             font-size:2.7em;
         }
         .card>p{
-        color:grey;
-        font-size:1.4em;
+            color:grey;
+            font-size:1.4em;
         }
         a{
-              font-size:1.6em;
-
-        margin-bottom:5%;}
+            font-size:1.6em;
+            margin-bottom:5%;
+        }
 
     </style>
 </head>
@@ -42,7 +42,7 @@
     <p>
         Click link below to activate your account, unless you haven't register in Obraski Image Hosting then ignore this email.
     </p>
-        <a href="somepage.html" th:href="@{localhost:8080/activation/${token}|}">ACTIVATE</a>
+        <a th:href="@{localhost:8080/activation/${token}|}">ACTIVATE</a>
     </div>
 
 </body>
