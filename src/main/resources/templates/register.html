@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
@@ -10,37 +10,46 @@
     <link rel="stylesheet" type="text/css" href="css/registerstyle.css">
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script src="js/registrationValidity.js"></script>
+
 
     <title>Obraski Image Hosting</title>
 </head>
 
 <body>
-    <div class="form">
+<div class="errors" hidden="true">
+    <ul id="errors">
+
+    </ul>
+</div>
+
+<div class="form">
         <h1 class="form-title">Registration</h1>
         <hr>
-        <form method="POST" id="id">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label --wider" id="login">
-                <input class="mdl-textfield__input --medium-font" type="text" id="username" name="username">
+        <form method="POST" id="form">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label --wider" >
+                <input class="mdl-textfield__input --medium-font" type="text" id="username" name="username" min="3">
                 <label class="mdl-textfield__label" for="username" id="login-label">Login</label>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label --wider">
-                <input class="mdl-textfield__input --medium-font" type="email" id="email" name="email">
+                <input class="mdl-textfield__input --medium-font" type="text" id="email" name="email">
                 <label class="mdl-textfield__label " for="email" id="password-label">Email</label>
             </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label --wider" id="login">
-                <input class="mdl-textfield__input --medium-font" type="password" id="password" name="password">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label --wider">
+                <input class="mdl-textfield__input --medium-font" type="password" id="password" name="password" min="5">
                 <label class="mdl-textfield__label " for="password">Password</label>
             </div>
 
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label --wider" id="password">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label --wider">
                 <input class="mdl-textfield__input --medium-font" type="password" id="password-repeat">
                 <label class="mdl-textfield__label " for="password-repeat">Password (Repeat)</label>
             </div>
 
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="submit" type="submit">
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="submit" onclick="register()">
                     Register
                   </button>
+            <button type="submit" hidden="true" id="hiddenSubmit"></button>
         </form>
 
 
