@@ -17,12 +17,6 @@ public class HomePageController {
         return "userpage";
     }
 
-
-    @GetMapping("/up")
-    public String upload() {
-        return "upload";
-    }
-
     @GetMapping("/")
     public String mainPage() {
         return "mainpage";

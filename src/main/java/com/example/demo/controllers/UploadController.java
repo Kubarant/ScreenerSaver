@@ -19,11 +19,11 @@ public class UploadController {
         this.uploadService= uploadService;
     }
 
+
     @PostMapping(value = "/upload")
    public String upload(@RequestPart("file") MultipartFile file, Principal principal, @RequestPart("title") String title) {
         uploadService.saveNewImage(file, principal, title);
 
         return file.toString();
-
     }
 }
