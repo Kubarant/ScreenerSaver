@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             usernameHeader.id = "username";
             usernameHeader.innerText = username;
 
-            document.getElementById("usernameContainer").appendChild(n);
+        document.getElementById("usernameContainer").appendChild(usernameHeader);
             let images = response.data.images;
 
             for (var i = 0; i < images.length; i++) {
