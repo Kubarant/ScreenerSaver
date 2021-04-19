@@ -1,7 +1,7 @@
-package com.example.demo;
+package com.example.demo.register;
 
+import com.example.demo.MD5Util;
 import com.example.demo.model.User;
-import com.example.demo.model.UserRegisterDTO;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
